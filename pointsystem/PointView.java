@@ -18,7 +18,7 @@ public class PointView extends JFrame{
     private JLabel id_event = new JLabel("Event");
     private JLabel id_expired_time = new JLabel("Expiration");
     private JButton addtrans = new JButton("Add Transaction");
-    private JButton querypoints = new JButton("Query Points");
+    private JButton querypoints = new JButton("Query User Points");
     private JTextField result = new JTextField("Result");
 
     PointController pointController;
@@ -26,7 +26,7 @@ public class PointView extends JFrame{
     public PointView(){
         JPanel pointPanel = new JPanel();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(600, 200);
+        this.setSize(600, 600);
         pointPanel.add(id_label);
         pointPanel.add(id);
         pointPanel.add(id_credit);

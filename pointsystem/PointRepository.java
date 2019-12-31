@@ -24,15 +24,8 @@ class PointRepository {
     }
 
     public Long addPointTransaction(PointEntity point){
-        if(pointEntities.containsKey(point.id)){
-            List<PointEntity> curUserPoint = pointEntities.get(point.id);
-            curUserPoint.add(point);
-            pointEntities.put(point.id,curUserPoint);
-        }else{
-            List<PointEntity> curUserPoint = new ArrayList<PointEntity>();
-            curUserPoint.add(point);
-            pointEntities.put(point.id,curUserPoint);
-        }
+        pointEntities.putIfAbsent(point.id, new ArrayList<PointEntity>());
+        pointEntities.get(point.id).add(point);
         return point.id;
     }
 
